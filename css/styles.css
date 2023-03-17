@@ -3,21 +3,35 @@
   margin-bottom: 42.665;
 }
 
+.title-right h2 {
+  display: none;
+}
+
+.title-right {
+  text-align: center;
+}
+
 @media only screen and (min-width: 920px)  {
   .title-line {
     display: flex;
   }
+  .title-left {
+    margin-right: 15px;
+  }
   .title-right {
     margin-left: auto;
+    min-width: 510px;
+    text-align: right;
   }
   .title-right p {
     max-width: 400px;
+    float: right;
+  }
+  .title-right h2 {
+    display: inline-block;
   }
 }
 
-.title-right h2 {
-  display: inline-block;
-}
 .title-right a.main-link {
   text-decoration: none;
 }
