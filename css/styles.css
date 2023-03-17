@@ -1,0 +1,29 @@
+body {
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 1400px;
+}
+
+p {
+  max-width: 800px;
+}
+
+select {
+  height: 40px;
+  font-size: 15px;
+}
+
+div.character {
+  width: 600px;
+  background-size: cover;
+  padding: 10px;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+img.character-image {
+  max-width: 200px;
+  vertical-align: top;
+}
