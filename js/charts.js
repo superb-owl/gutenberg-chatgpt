@@ -1,3 +1,4 @@
+const OUTPUT_BASE = window.location.href.includes("web") ? ".." : ".";
 const books = [];
 d3.csv('/important-books.csv', function(book) {
   books.push(book);
@@ -26,7 +27,7 @@ function renderBook(book) {
 
 function renderPersonSentiment(bookID, name, sentiment) {
   const nameID = name.replaceAll(/\W+/g, "_")
-  const imageURL = `/output/${bookID}/${nameID}.png`;
+  const imageURL = `${OUTPUT_BASE}/output/${bookID}/${nameID}.png`;
   console.log(nameID, imageURL);
   const divStyle = `background: linear-gradient( to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(${imageURL}); background-size: cover`
   $("#Sentiment").append(`
@@ -50,7 +51,7 @@ function renderPersonSentiment(bookID, name, sentiment) {
 function pickBook(bookID) {
   bookID = bookID || $('select').val();
   window.location.hash = bookID;
-  d3.json(`/output/${bookID}/data.json`).then(bookDetails => {
+  d3.json(`${OUTPUT_BASE}/output/${bookID}/data.json`).then(bookDetails => {
     bookDetails.ID = bookID;
     renderBook(bookDetails);
   });
