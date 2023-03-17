@@ -1,6 +1,6 @@
 const OUTPUT_BASE = window.location.href.includes("web") ? ".." : ".";
 const books = [];
-d3.csv('/important-books.csv', function(book) {
+d3.csv(`${OUTPUT_BASE}/important-books.csv`, function(book) {
   books.push(book);
 }).then(_ => renderPage());
 
